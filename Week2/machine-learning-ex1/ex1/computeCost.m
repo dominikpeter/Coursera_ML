@@ -13,12 +13,8 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-ypred = X*theta;
-% vectorized version?
-sse = sum((ypred - y).^2);
-
-J =  1/(2*m) * sse;
-
+d = X * theta - y;
+J =  1/(2*m) * d' * d;
 
 
 % =========================================================================
