@@ -14,7 +14,11 @@ J = 0;
 %               You should set J to the cost.
 
 
+ypred = X*theta;
+% vectorized version?
+sse = sum((ypred - y).^2);
 
+J =  1/(2*m) * sse;
 
 
 % =========================================================================

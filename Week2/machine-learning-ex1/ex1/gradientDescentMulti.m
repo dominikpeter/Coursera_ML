@@ -17,10 +17,11 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    fprintf('%.0f Iteration, Cost = %.0f \n', iter, computeCostMulti(X, y, theta));
 
-
-
-
+    ypred = X * theta;
+    
+    theta -= alpha * (1 / m) * (X' * (ypred - y));
 
 
 
