@@ -3,3 +3,7 @@
 **.mat
 
 **/*.mat
+
+/Week2/ex1/*.mat
+
+/Week2/ex2/*.mat
