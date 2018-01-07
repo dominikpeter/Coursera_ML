@@ -69,6 +69,8 @@ for i=1:m
   Y(i, :)= I(y(i), :);
 end
 
+
+
 % forward
 a1 = [ones(m, 1) X];
 z2 = a1*Theta1';
