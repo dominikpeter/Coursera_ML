@@ -20,8 +20,8 @@ S = zeros(n);
 %       number of examples).
 %
 
-
-
+Cov = (X'*X) / m;
+[U, S, V]=svd(Cov);
 
 
 
