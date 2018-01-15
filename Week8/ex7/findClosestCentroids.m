@@ -24,7 +24,7 @@ idx = zeros(size(X,1), 1);
 d = zeros(size(X,1), K);
 
 for i = 1:K
-  d(:,i) = sum( (X - centroids(i,:) ).^2, 2);
+  d(:,i) = sum((X - centroids(i,:)).^2, 2);
 endfor
 
 [_, idx] = min(d');
