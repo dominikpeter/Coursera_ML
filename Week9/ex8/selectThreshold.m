@@ -23,13 +23,16 @@ for epsilon = min(pval):stepsize:max(pval)
     % Note: You can use predictions = (pval < epsilon) to get a binary vector
     %       of 0's and 1's of the outlier predictions
 
-    c_ = 1.0e-31
+    c_ = +1.0e-31;
  
     pred = (pval < epsilon);
     
-    tp = sum(pred(pred == 1) == yval(pred==1));
-    fp = sum(pred(pred == 1) ~= yval(pred == 1));
-    fn = sum(pred(pred == 0) ~= yval(pred == 0));
+    t_ = pred == 1;
+    f_ = pred == 0;
+    
+    tp = sum( pred(t_) == yval(t_) );
+    fp = sum( pred(t_) ~= yval(t_) );
+    fn = sum( pred(f_) ~= yval(f_) );
 
     prec = tp / (tp + fp + c_);
     rec = tp / (tp + fn + c_);
