@@ -6,6 +6,7 @@ function [J, grad] = cofiCostFunc(params, Y, R, num_users, num_movies, ...
 %   collaborative filtering problem.
 %
 
+
 % Unfold the U and W matrices from params
 X = reshape(params(1:num_movies*num_features), num_movies, num_features);
 Theta = reshape(params(num_movies*num_features+1:end), ...
@@ -42,7 +43,7 @@ Theta_grad = zeros(size(Theta));
 
 
 pred = X * Theta';
-J = sum( ((pred-Y).^2)(R) )/2;
+J = sum(((pred-Y).^2)(R==1))/2;
 
 reg = sum(sum(Theta.^2));
 reg += sum(sum(X.^2));
