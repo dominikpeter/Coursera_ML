@@ -24,8 +24,7 @@ sigma2 = zeros(n, 1);
 mu = mean(X);
 
 d = X - mu;
-sigma2 = diag(d'*d)'/m;
-
+sigma2 = diag(d'*d)'./m;
 
 
 
